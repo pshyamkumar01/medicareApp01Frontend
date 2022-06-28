@@ -1,0 +1,34 @@
+.card-top
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: .25rem;
+}
+.item img{
+    width: 140px;
+    height: 80px;
+}
+.item
+{
+    margin: 0px 10px;
+}
+.picsum-img-wrapper 
+{
+    width : 0rem;
+    height : 0rem;
+    margin : 460px;
+    margin-top: 0px;
+    position: relative;
+    
+}
+
+.item a:hover
+{
+    color : rgb(238, 87, 6)
+}

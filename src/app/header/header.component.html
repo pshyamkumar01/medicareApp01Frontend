@@ -1,0 +1,20 @@
+<header>
+    <div class="navbar bg-info shadow-sm">
+        <div class="navbar-brand align-item-center d-flex">
+            <i style="font-size: 40px; color: white;" class="fa-solid fa-house-chimney-medical">&nbsp;
+                
+            </i>
+            <strong style="font-family: 'Times New Roman', Times, serif; font-size: 30px; color: white;">Medicare</strong>
+
+            <div class="form-group">
+                <input type="text" placeholder="Search Product" class="form-control">
+            </div>
+            <span class="fas fa-search search-icon"></span>
+
+        </div>
+        <button (click)="gotocart()" class="btn btn-info">
+            <i style="font-size: 30px;" class="fa-solid fa-cart-plus"></i>
+            <div style="font-size: 10px" class="badge bg-warning">{{totalItem}}</div>
+        </button>
+    </div>
+</header>

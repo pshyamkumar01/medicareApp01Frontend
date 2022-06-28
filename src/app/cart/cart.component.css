@@ -1,0 +1,32 @@
+.form-control
+{
+    border-radius: 3px;
+    width: 600px;
+    margin-left: 20px;
+}
+
+.search-icon
+{
+    position: absolute;
+    z-index: 10;
+    right: 49%;
+    top: 22px;
+    color: black;
+}
+
+.card
+{
+    height: 60vh;
+    margin: 25px;
+    padding : 25px;
+}
+
+.center
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+

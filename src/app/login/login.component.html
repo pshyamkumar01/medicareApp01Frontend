@@ -1,0 +1,52 @@
+ 
+ <div style="max-width: 1600px; background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAIEAzgMBIgACEQEDEQH/xAAYAAADAQEAAAAAAAAAAAAAAAAAAgMBB//EABoQAQEBAQEBAQAAAAAAAAAAAAABAhESMUH/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAMAwEAAhEDEQA/AOIgBUADeAIeRkPFBIaQZh5lWayQ0hpDcVCzLZFJlsyolwcV8jyYJWM4rcssMEbC2LXJLEVGwti1hLEIlYXilJYjRQKEAAAAAAQ8hZDxYNkPmMkUzFTWyHkZIpmLGRIfgmVMxrELI2ZPIaZXE1PyPKvkcMNRuS3K/ktguoahLF7E7EsEbCai1ieoyqNhbFNQliNJ2FPS1lWAAAIBANDyFh8rA+YpmEzFMtM0+YpmFzFMxqM00h5BmHkaZokNMmzDSKhfLPKnBwErkli9hNQELCWLaieozWojqJ2Laiema0jqJVfSWmVS0SqaJUrRQAgGxjYQNIpkkPloUyrlPKmVZqmYrInn4rltk+VcxPKuVjNPIbjMnjbI4OH4ygnYSxTRKCWonqK6S0w1EtRLS2ktM1qJa+Jaiuk9MtJUmj6JWa0SgUIBsY2AeHySHy0K5UyllXNViq5/Fco5qsraK5VyllTNWM1XJ4nKeXrbKgpOjoM0SmtJaBNJaU0nqsNRPSWlNVLX1mtQmktKaS0y0nolPSVmtEoFCAEAgHh8pw8WCuaplLKmWmatlXKGVM1qM1fNPKjmqStM1bNPKhKeaVFejqfoelDWktZaW1AWp6rbU9VmtRmqlo+qlqs1ouk9G1U7UUmiU9JazWi0AIAAA2U8qcPFgpmqZqMPmqmL5p5UZT5rTK+aeVCU80qLzRpUZps0upivR1P0PSpilpLS3RbpNVtpNUXRLUtXBqp2ttTtZWM1U7W6pajRaWtpWVAAAAAA2VgBSU0Sh5VFZTyoymlaZq8ppUZTTRqLSt9Jdb1dFfQ9JSj0umKXTLep2suk0PaS1nSWorbSaotLahGUtotLajQrAEAAAAAAAAGxsAUPGxoVGw8AVGtAUawABWAAWloDIUoApS0BFAAQAAB//9k=);">
+    <h1 style="text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif; color: white;">MEDICARE</h1>
+    <br><br><br><br><br><br><br><br>
+</div>
+
+<div style="max-width: 1600px; min-height: 100px; background-image: url(https://img.freepik.com/free-photo/shopping-cart-with-pill-foils-copy-space_23-2148533453.jpg?size=626&ext=jpg&ga=GA1.2.1359506581.1654705847);">
+        
+    <div class="container" style="background-color: white; max-width: 400px;">
+        <div class="form-group col-md-8 offset-md-2">
+        <h2>Login</h2>
+        <small class="text-danger">{{msg}}</small>
+        <form (ngSubmit)="loginuser()">
+            <div class="form-group">
+                <label for="email">Email address:</label>
+                <input type="email" 
+                        class="form-control" 
+                        name="uemail"
+                        placeholder="Enter Email"
+                        [(ngModel)]="user.email"
+                        required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" #uemail = "ngModel"
+                        [class.is-invalid] = "uemail.invalid && uemail.touched"
+                >
+                        <!-- <small class="text-danger" [class.d-none] = "uemail.valid || uemail.untouched">Email required</small> -->
+                        <div *ngIf="uemail.errors && (uemail.invalid && uemail.touched)">
+                            <small class="text-danger" *ngIf="uemail.errors?.['required']">Email Address is Required</small>
+                            <small class="text-danger" *ngIf="uemail.errors?.['pattern']">Email Id is invalid</small>
+                         </div>
+
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" 
+                        class="form-control" 
+                        name="userpassword"
+                        placeholder="Enter Email"
+                        [(ngModel)]="user.password"
+                        required #upassword = "ngModel"
+                        [class.is-invalid] = "upassword.invalid && upassword.touched"
+                 >
+                         <small class="text-danger" [class.d-none] = "upassword.valid || upassword.untouched">Password required</small>
+            </div>
+            <div class="checkbox">
+                 <label><input type="checkbox"> Remember me</label>
+            </div><br>
+            <button type="submit" class="btn btn-success" style="font-size: smaller;">User Login</button>
+        </form><br>
+        <button type="submit" class="btn btn-success" style="font-size: smaller;" (click)="loginadmin()">Admin Login</button>
+    </div>
+        <small class="float : right" (click)="newUserRegistration()">New User? Register here</small>
+    </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
